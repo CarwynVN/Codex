@@ -1,0 +1,1982 @@
+{
+ "environment": {
+  "langchain": "1.4.6",
+  "langchain_core": "1.6.12",
+  "langchain_chroma": "1.1.0",
+  "langchain_huggingface": "1.2.3",
+  "transformers": "5.18.0",
+  "torch": "2.14.1",
+  "machine": "arm64",
+  "python": "3.12.14"
+ },
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "kb_chunks": 29,
+ "warmup": {
+  "with_system": "At Company X, we strive to provide clear guidelines on returns and shipping costs. Typically, you can return items within 30 days of receiving them if they meet our return policy requirements.\n\nFor most products, the cost of returning the item is your responsibility unless specified otherwise in the product description or during checkout. If there's no mention of free returns, it usually means that you'll need to pay for the return shipping.\n\nTo ensure you understand the specifics:\n\n1. **Return Policy**: Check the \"Returns\" section of our website or contact customer service directly.\n2. **Shipping Costs**: Review the shipping options available when placing your order. Some stores offer free returns with certain conditions (like not exceeding a specific weight limit).\n3. **Free Returns**: Look for any special offers like \"free returns\" which might apply to specific categories or types of purchases.\n\nIf you're unsure about anything, reaching out to our customer service team via email or phone will help clarify these details further. They can provide personalized advice based on your purchase history and current policies.",
+  "no_system": "The specific rules regarding returns can vary depending on your country or region's laws and regulations. However, in general:\n\n1. **Return Period**: Most countries allow you up to 30-60 days from the date of purchase to return items.\n\n2. **Shipping Costs**: The responsibility for returning the item typically falls on the customer. This means that if you decide to return an item, you will be responsible for paying the cost of shipping it back to the seller.\n\nHowever, some sellers may offer different policies:\n- Some might require you to pay only part of the shipping costs.\n- Others might cover all shipping costs.\n\nIt\u2019s important to check with the specific seller or retailer to understand their return policy before making a purchase. If you're unsure about any aspect of the return process, contacting the seller directly is usually the best course of action."
+ },
+ "tickets": {
+  "J01": {
+   "value": {
+    "customer": "Lan Tran",
+    "order_id": "CX-10482",
+    "product": "rice cooker",
+    "category": "damaged",
+    "requests": [
+     "replacement",
+     "not a refund"
+    ],
+    "amount_vnd": null
+   },
+   "truth": {
+    "customer": "Lan Tran",
+    "order_id": "CX-10482",
+    "product": "rice cooker",
+    "category": "damaged",
+    "requests": [
+     "a replacement"
+    ],
+    "amount_vnd": null,
+    "needs_review": false
+   },
+   "seconds": 12.1,
+   "raw": "<tool_call>\n{\"name\": \"Ticket\", \"arguments\": {\"customer\": \"Lan Tran\", \"order_id\": \"CX-10482\", \"product\": \"rice cooker\", \"category\": \"damaged\", \"requests\": [\"replacement\", \"not a refund\"]}}\n</tool_call>"
+  },
+  "J02": {
+   "value": {
+    "customer": "Minh",
+    "order_id": null,
+    "product": null,
+    "category": "damaged",
+    "requests": [
+     "Replace the Blender",
+     "Return the Product"
+    ],
+    "amount_vnd": null
+   },
+   "truth": {
+    "customer": "Minh",
+    "order_id": null,
+    "product": "blender",
+    "category": "damaged",
+    "requests": [
+     "help with the broken blender"
+    ],
+    "amount_vnd": null,
+    "needs_review": true
+   },
+   "seconds": 10.6,
+   "raw": "<tool_call>\n{\"name\": \"Ticket\", \"arguments\": {\"customer\": \"Minh\", \"category\": \"damaged\", \"requests\": [\"Replace the Blender\", \"Return the Product\"]}}\n</tool_call>"
+  },
+  "J03": {
+   "value": {
+    "customer": "Nam",
+    "order_id": "CX-10498",
+    "product": "standing fan",
+    "category": "damaged",
+    "requests": [
+     "update status",
+     "return payment"
+    ],
+    "amount_vnd": null
+   },
+   "truth": {
+    "customer": "Nam",
+    "order_id": null,
+    "product": "standing fan",
+    "category": "delivery",
+    "requests": [
+     "the arrival date"
+    ],
+    "amount_vnd": null,
+    "needs_review": true
+   },
+   "seconds": 11.8,
+   "raw": "<tool_call>\n{\"name\": \"Ticket\", \"arguments\": {\"customer\": \"Nam\", \"order_id\": \"CX-10498\", \"product\": \"standing fan\", \"category\": \"damaged\", \"requests\": [\"update status\", \"return payment\"]}}\n</tool_call>"
+  },
+  "J04": {
+   "value": {
+    "customer": "Tuan Le",
+    "order_id": "CX-10702",
+    "product": "microwave",
+    "category": "refund",
+    "requests": [
+     "refund one payment to my card"
+    ],
+    "amount_vnd": null
+   },
+   "truth": {
+    "customer": "Tuan Le",
+    "order_id": "CX-10702",
+    "product": "microwave",
+    "category": "refund",
+    "requests": [
+     "refund one payment"
+    ],
+    "amount_vnd": 2490000,
+    "needs_review": false
+   },
+   "seconds": 11.9,
+   "raw": "<tool_call>\n{\"name\": \"Ticket\", \"arguments\": {\"customer\": \"Tuan Le\", \"order_id\": \"CX-10702\", \"product\": \"microwave\", \"category\": \"refund\", \"requests\": [\"refund one payment to my card\"]}}\n</tool_call>"
+  },
+  "J05": {
+   "value": {
+    "customer": "Lien",
+    "order_id": null,
+    "product": null,
+    "category": "refund",
+    "requests": [
+     "cancel order",
+     "return shipping"
+    ],
+    "amount_vnd": null
+   },
+   "truth": {
+    "customer": "Lien",
+    "order_id": null,
+    "product": "blender",
+    "category": "refund",
+    "requests": [
+     "cancel the order"
+    ],
+    "amount_vnd": null,
+    "needs_review": true
+   },
+   "seconds": 10.2,
+   "raw": "<tool_call>\n{\"name\": \"Ticket\", \"arguments\": {\"customer\": \"Lien\", \"category\": \"refund\", \"requests\": [\"cancel order\", \"return shipping\"]}}\n</tool_call>"
+  }
+ },
+ "ticket_prompt": "<|im_start|>system\nYou must answer by calling one of the functions inside <tool_call></tool_call> tags.\n\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"Ticket\", \"description\": \"One customer ticket as data.\", \"parameters\": {\"properties\": {\"customer\": {\"description\": \"the customer's name as they sign it\", \"type\": \"string\"}, \"order_id\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"the order code exactly as written (CX- and 5 digits), or null if there is none; never invent one\"}, \"product\": {\"anyOf\": [{\"type\": \"string\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"the product the ticket is about, in 1-3 words, or null\"}, \"category\": {\"description\": \"exactly one of \\\"delivery\\\", \\\"damaged\\\", \\\"refund\\\", \\\"question\\\"\", \"type\": \"string\"}, \"requests\": {\"description\": \"one short phrase for each thing the customer asks for\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"amount_vnd\": {\"anyOf\": [{\"type\": \"integer\"}, {\"type\": \"null\"}], \"default\": null, \"description\": \"an amount of money in VND as a whole number without commas, or null\"}}, \"required\": [\"customer\", \"category\", \"requests\"], \"type\": \"object\"}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call><|im_end|>\n<|im_start|>user\nExtract the ticket.\n\nCustomer ticket:\nFrom: Lien\nPlease cancel my blender order, I found it cheaper in another shop. It has not shipped yet.\nLien<|im_end|>\n<|im_start|>assistant\n",
+ "rag_template": "Answer the customer's question using ONLY the context. The context blocks are numbered [1], [2], [3].\nRules:\n- Use only facts from the context, never your own knowledge about shops.\n- sources: the numbers of the blocks you used.\n- If the context does not answer the question: enough_info false, sources [], answer \"I do not have this information.\"\n- If two blocks disagree, follow the block updated most recently.\n\nContext:\n{context}\n\nQuestion: {question}",
+ "retrieved": {
+  "Q01": [
+   {
+    "chunk_id": "POL-RET-01#01",
+    "similarity": 0.562,
+    "text": "Change-of-mind returns. You can return an item within 14 days of delivery if you changed your mind. The item must be unused, clean and in its original box with all accessories and the warranty card. E"
+   },
+   {
+    "chunk_id": "POL-DMG-01#03",
+    "similarity": 0.522,
+    "text": "from the box, report it within 7 days. We send the missing part by express delivery, free of charge, usually within 3 working days. Replacement or refund. Company X collects the item free of charge. W"
+   },
+   {
+    "chunk_id": "POL-RET-01#04",
+    "similarity": 0.502,
+    "text": "item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse."
+   }
+  ],
+  "Q02": [
+   {
+    "chunk_id": "POL-DMG-01#01",
+    "similarity": 0.379,
+    "text": "Check the box at delivery. Look at the box in front of the driver. If it is crushed, wet or open, take a photo and write it on the delivery note, or refuse the parcel: we send a new one at no cost. Re"
+   },
+   {
+    "chunk_id": "POL-DMG-01#02",
+    "similarity": 0.343,
+    "text": "problem. If an item arrives damaged or stops working, report it within 7 days of delivery in your account or by phone. Add a photo or a short video of the problem if you can. Missing parts. If a part "
+   },
+   {
+    "chunk_id": "POL-DMG-01#04",
+    "similarity": 0.303,
+    "text": "item reaches our warehouse. If you prefer, we refund the full price instead, including the delivery fee. After 7 days. Problems reported more than 7 days after delivery go to the manufacturer's warran"
+   }
+  ],
+  "Q04": [
+   {
+    "chunk_id": "FAQ-AP-01#03",
+    "similarity": 0.455,
+    "text": "HF-2013 (390,000 VND); for the AP-40 it is HF-4013 (450,000 VND). Cleaning and noise. Wipe the outside and the sensor with a dry cloth once a month. In night mode the AP-20 makes 24 dB and the AP-40 m"
+   },
+   {
+    "chunk_id": "POL-PAY-01#01",
+    "similarity": 0.321,
+    "text": "Ways to pay. We accept bank cards, bank transfer, e-wallets and cash on delivery. Cash on delivery is available for orders up to 10,000,000 VND. Monthly instalments. Orders over 3,000,000 VND can be p"
+   },
+   {
+    "chunk_id": "POL-PAY-01#03",
+    "similarity": 0.261,
+    "text": "by email. Refund times. Refunds go back to the method you paid with: e-wallet within 3 working days, card or bank account within 7 working days. A double charge is refunded in 3-5 working days, depend"
+   }
+  ],
+  "Q05": [
+   {
+    "chunk_id": "POL-PAY-01#01",
+    "similarity": 0.741,
+    "text": "Ways to pay. We accept bank cards, bank transfer, e-wallets and cash on delivery. Cash on delivery is available for orders up to 10,000,000 VND. Monthly instalments. Orders over 3,000,000 VND can be p"
+   },
+   {
+    "chunk_id": "PRM-DEL-10#01",
+    "similarity": 0.633,
+    "text": "Free delivery in October. From 1 to 31 October 2026, delivery is free for all orders over 500,000 VND, in every province. Orders up to 500,000 VND pay the normal delivery fee. The offer cannot be comb"
+   },
+   {
+    "chunk_id": "POL-DMG-01#04",
+    "similarity": 0.551,
+    "text": "item reaches our warehouse. If you prefer, we refund the full price instead, including the delivery fee. After 7 days. Problems reported more than 7 days after delivery go to the manufacturer's warran"
+   }
+  ],
+  "Q06": [
+   {
+    "chunk_id": "POL-DEL-01#04",
+    "similarity": 0.557,
+    "text": "order is more than 3 days late, contact support with your order code. We book a new slot and the driver calls 30 minutes before arrival. You may cancel a late order instead and get a full refund with "
+   },
+   {
+    "chunk_id": "POL-DEL-01#03",
+    "similarity": 0.357,
+    "text": "washing machines are delivered by our own team in a 4-hour time slot that you choose at checkout. The team carries the item to the room you want and removes the packaging. Late or missed deliveries. I"
+   },
+   {
+    "chunk_id": "POL-ORD-01#03",
+    "similarity": 0.327,
+    "text": "the last parcel arrives. After the order ships. After shipping, the order can no longer be changed. Contact the carrier with the tracking number to ask for a new address, or wait for delivery and use "
+   }
+  ],
+  "Q07": [
+   {
+    "chunk_id": "POL-DEL-01#03",
+    "similarity": 0.618,
+    "text": "washing machines are delivered by our own team in a 4-hour time slot that you choose at checkout. The team carries the item to the room you want and removes the packaging. Late or missed deliveries. I"
+   },
+   {
+    "chunk_id": "SVC-INS-01#03",
+    "similarity": 0.548,
+    "text": "a balcony that the technician can reach safely. Taking away your old appliance. At the same visit the technician can take away your old appliance for free. Tell us when you book, so that the team brin"
+   },
+   {
+    "chunk_id": "POL-WAR-01#02",
+    "similarity": 0.491,
+    "text": "the warranty card or bring the item to the centre. Most repairs take 7 to 14 days. For fridges and washing machines a technician comes to your home. How long the warranty lasts. Small kitchen applianc"
+   }
+  ],
+  "Q09": [
+   {
+    "chunk_id": "POL-RET-01#03",
+    "similarity": 0.23,
+    "text": "other parts that touch food or dust cannot be returned once the packet is open. Items sold as \"final sale\" in the shop cannot be returned either, unless they are faulty. Pickup and refund. Book the re"
+   },
+   {
+    "chunk_id": "POL-DEL-01#01",
+    "similarity": 0.219,
+    "text": "Delivery times. We deliver nationwide. Ho Chi Minh City and Ha Noi: 1-2 working days. Other provinces: 2-5 working days. Orders placed after 4 pm count from the next working day. Delivery fee. The del"
+   },
+   {
+    "chunk_id": "SVC-INS-01#03",
+    "similarity": 0.215,
+    "text": "a balcony that the technician can reach safely. Taking away your old appliance. At the same visit the technician can take away your old appliance for free. Tell us when you book, so that the team brin"
+   }
+  ],
+  "Q10": [
+   {
+    "chunk_id": "POL-RET-01#02",
+    "similarity": 0.314,
+    "text": "\"exchange\" when you book the return. We ship the new item when the old one reaches our warehouse. If the new item costs more, you pay the difference; if it costs less, we refund the difference. Items "
+   },
+   {
+    "chunk_id": "PRM-DEL-10#01",
+    "similarity": 0.275,
+    "text": "Free delivery in October. From 1 to 31 October 2026, delivery is free for all orders over 500,000 VND, in every province. Orders up to 500,000 VND pay the normal delivery fee. The offer cannot be comb"
+   },
+   {
+    "chunk_id": "POL-RET-01#04",
+    "similarity": 0.216,
+    "text": "item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse."
+   }
+  ],
+  "T01": [
+   {
+    "chunk_id": "POL-RET-01#01",
+    "similarity": 0.518,
+    "text": "Change-of-mind returns. You can return an item within 14 days of delivery if you changed your mind. The item must be unused, clean and in its original box with all accessories and the warranty card. E"
+   },
+   {
+    "chunk_id": "POL-RET-01#03",
+    "similarity": 0.516,
+    "text": "other parts that touch food or dust cannot be returned once the packet is open. Items sold as \"final sale\" in the shop cannot be returned either, unless they are faulty. Pickup and refund. Book the re"
+   },
+   {
+    "chunk_id": "POL-RET-01#04",
+    "similarity": 0.483,
+    "text": "item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse."
+   }
+  ],
+  "T02": [
+   {
+    "chunk_id": "POL-RET-01#02",
+    "similarity": 0.662,
+    "text": "\"exchange\" when you book the return. We ship the new item when the old one reaches our warehouse. If the new item costs more, you pay the difference; if it costs less, we refund the difference. Items "
+   },
+   {
+    "chunk_id": "POL-RET-01#04",
+    "similarity": 0.629,
+    "text": "item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse."
+   },
+   {
+    "chunk_id": "POL-RET-01#03",
+    "similarity": 0.532,
+    "text": "other parts that touch food or dust cannot be returned once the packet is open. Items sold as \"final sale\" in the shop cannot be returned either, unless they are faulty. Pickup and refund. Book the re"
+   }
+  ],
+  "T03": [
+   {
+    "chunk_id": "FAQ-AP-01#02",
+    "similarity": 0.46,
+    "text": "the air quality: blue is good, yellow is fair and red is bad. In automatic mode the fan speed follows the light. Filters. Each purifier comes with one filter. Filters are not washable: replace them ev"
+   },
+   {
+    "chunk_id": "FAQ-AP-01#03",
+    "similarity": 0.397,
+    "text": "HF-2013 (390,000 VND); for the AP-40 it is HF-4013 (450,000 VND). Cleaning and noise. Wipe the outside and the sensor with a dry cloth once a month. In night mode the AP-20 makes 24 dB and the AP-40 m"
+   },
+   {
+    "chunk_id": "POL-WAR-01#03",
+    "similarity": 0.222,
+    "text": "12 months. Fans, vacuum cleaners and air purifiers have 24 months. Fridges, washing machines and air conditioners have 36 months. Extended warranty. At checkout you can add 12 more months of warranty "
+   }
+  ],
+  "T04": [
+   {
+    "chunk_id": "POL-PAY-01#03",
+    "similarity": 0.583,
+    "text": "by email. Refund times. Refunds go back to the method you paid with: e-wallet within 3 working days, card or bank account within 7 working days. A double charge is refunded in 3-5 working days, depend"
+   },
+   {
+    "chunk_id": "POL-DEL-01#04",
+    "similarity": 0.581,
+    "text": "order is more than 3 days late, contact support with your order code. We book a new slot and the driver calls 30 minutes before arrival. You may cancel a late order instead and get a full refund with "
+   },
+   {
+    "chunk_id": "POL-RET-01#04",
+    "similarity": 0.559,
+    "text": "item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse."
+   }
+  ],
+  "T06": [
+   {
+    "chunk_id": "SVC-INS-01#01",
+    "similarity": 0.656,
+    "text": "What we install. Our technicians install washing machines, dishwashers and air conditioners. Fridges and other appliances need no installation: the delivery team sets them up. Booking and price. Book "
+   },
+   {
+    "chunk_id": "SVC-INS-01#02",
+    "similarity": 0.643,
+    "text": "500,000 VND for an air conditioner. It takes place within 3 days after delivery. Before the technician comes. Make sure there is a socket and a water tap near the place of the appliance. For an air co"
+   },
+   {
+    "chunk_id": "FAQ-AP-01#02",
+    "similarity": 0.447,
+    "text": "the air quality: blue is good, yellow is fair and red is bad. In automatic mode the fan speed follows the light. Filters. Each purifier comes with one filter. Filters are not washable: replace them ev"
+   }
+  ],
+  "T08": [
+   {
+    "chunk_id": "FAQ-AP-01#03",
+    "similarity": 0.467,
+    "text": "HF-2013 (390,000 VND); for the AP-40 it is HF-4013 (450,000 VND). Cleaning and noise. Wipe the outside and the sensor with a dry cloth once a month. In night mode the AP-20 makes 24 dB and the AP-40 m"
+   },
+   {
+    "chunk_id": "FAQ-AP-01#02",
+    "similarity": 0.429,
+    "text": "the air quality: blue is good, yellow is fair and red is bad. In automatic mode the fan speed follows the light. Filters. Each purifier comes with one filter. Filters are not washable: replace them ev"
+   },
+   {
+    "chunk_id": "FAQ-AP-01#01",
+    "similarity": 0.265,
+    "text": "Which model for which room. The AP-20 is for rooms up to 30 m2 and the AP-40 for rooms up to 45 m2. Both have three fan speeds and a timer from 1 to 8 hours. Air quality light. A light on the top show"
+   }
+  ],
+  "T09": [
+   {
+    "chunk_id": "POL-ORD-01#01",
+    "similarity": 0.534,
+    "text": "Order status. Your account shows the status of every order: confirmed, packed, shipped, delivered. You also get a text message at each step. Before the order ships. The delivery address, the time slot"
+   },
+   {
+    "chunk_id": "POL-ORD-01#02",
+    "similarity": 0.521,
+    "text": "order ships. An order that has not shipped can be cancelled at no cost in your account. Orders in several parcels. A large order may arrive in several parcels on different days. Each parcel has its ow"
+   },
+   {
+    "chunk_id": "POL-DEL-01#02",
+    "similarity": 0.508,
+    "text": "orders over 1,000,000 VND. Tracking your order. When your order ships you get a text message with a tracking link. The link shows where the parcel is and the name and phone number of the driver on the"
+   }
+  ],
+  "T10": [
+   {
+    "chunk_id": "POL-RET-01#03",
+    "similarity": 0.301,
+    "text": "other parts that touch food or dust cannot be returned once the packet is open. Items sold as \"final sale\" in the shop cannot be returned either, unless they are faulty. Pickup and refund. Book the re"
+   },
+   {
+    "chunk_id": "POL-RET-01#01",
+    "similarity": 0.286,
+    "text": "Change-of-mind returns. You can return an item within 14 days of delivery if you changed your mind. The item must be unused, clean and in its original box with all accessories and the warranty card. E"
+   },
+   {
+    "chunk_id": "POL-RET-01#04",
+    "similarity": 0.255,
+    "text": "item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse."
+   }
+  ]
+ },
+ "no_gate": {
+  "demo": {
+   "text": "4/8 correct | retrieval errors 0 | generation errors 4",
+   "ok": 4,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 4,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04",
+     "answer": "You have 14 days to send back something you don't like.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.2
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the damage immediately as soon as possible after receiving the product. Follow the steps outlined in the context to ensure proper handling and reporting of any issues.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.2
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.1
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04",
+     "answer": "No, you do not need to pay for delivery as your order is under 500,000 VND.",
+     "source_ids": "POL-PAY-01#01 PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 16.6
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "Contact support with your order code as soon as possible. They will handle the situation according to the rules we discussed earlier.",
+     "source_ids": "POL-DEL-01#04 POL-DEL-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 13.5
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02",
+     "answer": "Yes, the technician can take your old washing machine away for free during the same visit.",
+     "source_ids": "SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.3
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "No, we don't have a showroom in Da Nang. You can view our products online here.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 10.0
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "No, we do not offer discounts to students.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 9.3
+    }
+   ]
+  },
+  "task": {
+   "text": "5/8 correct | retrieval errors 0 | generation errors 3",
+   "ok": 5,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 3,
+   "rows": [
+    {
+     "qid": "T01",
+     "question": "I opened the box and I don't want it anymore. Can I return it?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-RET-01#03 POL-RET-01#04",
+     "answer": "Yes, you can return the item within 14 days of delivery if you changed your mind.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.2
+    },
+    {
+     "qid": "T02",
+     "question": "Who pays the courier when I send an item back?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#02 POL-RET-01#04 POL-RET-01#03",
+     "answer": "We ship the new item when the old one reaches our warehouse.",
+     "source_ids": "POL-RET-01#02 POL-RET-01#04",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 14.8
+    },
+    {
+     "qid": "T03",
+     "question": "Is HF-2013 the right filter for my purifier?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#02 FAQ-AP-01#03",
+     "answer": "Yes, HF-2013 is the correct filter for your AP-20 purifier.",
+     "source_ids": "FAQ-AP-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.0
+    },
+    {
+     "qid": "T04",
+     "question": "I paid twice for the same order. When do I get one payment back?",
+     "correct_source": "POL-PAY-01",
+     "retrieved": "POL-PAY-01#03 POL-DEL-01#04 POL-RET-01#04",
+     "answer": "A double charge is refunded in 3-5 working days, depending on your bank.",
+     "source_ids": "POL-PAY-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.1
+    },
+    {
+     "qid": "T06",
+     "question": "How much does it cost to install an air conditioner?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "SVC-INS-01#01 SVC-INS-01#02 FAQ-AP-01#02",
+     "answer": "It costs 500,000 VND for an air conditioner to be installed.",
+     "source_ids": "SVC-INS-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 17.0
+    },
+    {
+     "qid": "T08",
+     "question": "How loud is the bigger purifier at night?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03 FAQ-AP-01#02",
+     "answer": "The AP-40 makes 28 dB at night.",
+     "source_ids": "FAQ-AP-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.6
+    },
+    {
+     "qid": "T09",
+     "question": "Can I collect my order myself at your warehouse?",
+     "correct_source": "none",
+     "retrieved": "POL-ORD-01#01 POL-ORD-01#02 POL-DEL-01#02",
+     "answer": "No, you cannot collect your order yourself at our warehouse. Please wait for the delivery person to deliver the items to your doorstep.",
+     "source_ids": "POL-ORD-01#01 POL-ORD-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 16.2
+    },
+    {
+     "qid": "T10",
+     "question": "Do you buy back old phones?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "No, we do not currently offer phone buying-back services.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 9.4
+    }
+   ]
+  }
+ },
+ "gate": {
+  "demo": {
+   "text": "6/8 correct | retrieval errors 0 | generation errors 2",
+   "ok": 6,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 2,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04",
+     "answer": "You have 14 days to send back something you don't like.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.9
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the damage immediately as soon as possible after receiving the product. Follow the steps outlined in the context to ensure proper handling and reporting of any issues.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.2
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.1
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04",
+     "answer": "No, you do not need to pay for delivery as your order is under 500,000 VND.",
+     "source_ids": "POL-PAY-01#01 PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 16.7
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "Contact support with your order code as soon as possible. They will handle the situation according to the rules we discussed earlier.",
+     "source_ids": "POL-DEL-01#04 POL-DEL-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 13.6
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02",
+     "answer": "Yes, the technician can take your old washing machine away for free during the same visit.",
+     "source_ids": "SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.4
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  },
+  "task": {
+   "text": "6/8 correct | retrieval errors 0 | generation errors 2",
+   "ok": 6,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 2,
+   "rows": [
+    {
+     "qid": "T01",
+     "question": "I opened the box and I don't want it anymore. Can I return it?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-RET-01#03 POL-RET-01#04",
+     "answer": "Yes, you can return the item within 14 days of delivery if you changed your mind.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.4
+    },
+    {
+     "qid": "T02",
+     "question": "Who pays the courier when I send an item back?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#02 POL-RET-01#04 POL-RET-01#03",
+     "answer": "We ship the new item when the old one reaches our warehouse.",
+     "source_ids": "POL-RET-01#02 POL-RET-01#04",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 15.0
+    },
+    {
+     "qid": "T03",
+     "question": "Is HF-2013 the right filter for my purifier?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#02 FAQ-AP-01#03",
+     "answer": "Yes, HF-2013 is the correct filter for your AP-20 purifier.",
+     "source_ids": "FAQ-AP-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.2
+    },
+    {
+     "qid": "T04",
+     "question": "I paid twice for the same order. When do I get one payment back?",
+     "correct_source": "POL-PAY-01",
+     "retrieved": "POL-PAY-01#03 POL-DEL-01#04 POL-RET-01#04",
+     "answer": "A double charge is refunded in 3-5 working days, depending on your bank.",
+     "source_ids": "POL-PAY-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.2
+    },
+    {
+     "qid": "T06",
+     "question": "How much does it cost to install an air conditioner?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "SVC-INS-01#01 SVC-INS-01#02 FAQ-AP-01#02",
+     "answer": "It costs 500,000 VND for an air conditioner to be installed.",
+     "source_ids": "SVC-INS-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 17.2
+    },
+    {
+     "qid": "T08",
+     "question": "How loud is the bigger purifier at night?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03 FAQ-AP-01#02",
+     "answer": "The AP-40 makes 28 dB at night.",
+     "source_ids": "FAQ-AP-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.7
+    },
+    {
+     "qid": "T09",
+     "question": "Can I collect my order myself at your warehouse?",
+     "correct_source": "none",
+     "retrieved": "POL-ORD-01#01 POL-ORD-01#02 POL-DEL-01#02",
+     "answer": "No, you cannot collect your order yourself at our warehouse. Please wait for the delivery person to deliver the items to your doorstep.",
+     "source_ids": "POL-ORD-01#01 POL-ORD-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 16.3
+    },
+    {
+     "qid": "T10",
+     "question": "Do you buy back old phones?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  }
+ },
+ "d03_q01": {
+  "answer": "You have 14 days to send back something you don't like.",
+  "source_ids": [
+   "POL-RET-01#01"
+  ],
+  "enough_info": true
+ },
+ "rag_prompt": "<|im_start|>system\nYou are a support assistant at Company X, an online store for home appliances.\nYou must answer by calling one of the functions inside <tool_call></tool_call> tags.\n\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"Answer\", \"description\": \"The answer to the customer's question, based only on the context.\", \"parameters\": {\"properties\": {\"answer\": {\"description\": \"the answer in 1-2 sentences, using only facts from the context\", \"type\": \"string\"}, \"sources\": {\"description\": \"the numbers [1], [2], [3] of the context blocks used; [] if none\", \"items\": {\"type\": \"integer\"}, \"type\": \"array\"}, \"enough_info\": {\"description\": \"true if the context answers the question; false if it does not\", \"type\": \"boolean\"}}, \"required\": [\"answer\", \"sources\", \"enough_info\"], \"type\": \"object\"}}}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call><|im_end|>\n<|im_start|>user\nAnswer the customer's question using ONLY the context. The context blocks are numbered [1], [2], [3].\nRules:\n- Use only facts from the context, never your own knowledge about shops.\n- sources: the numbers of the blocks you used.\n- If the context does not answer the question: enough_info false, sources [], answer \"I do not have this information.\"\n- If two blocks disagree, follow the block updated most recently.\n\nContext:\n[1] (updated 2026-10-10) Change-of-mind returns. You can return an item within 14 days of delivery if you changed your mind. The item must be unused, clean and in its original box with all accessories and the warranty card. Exchanges. If you want another colour or model instead, choose \"exchange\" when you book the return. We ship the new item when the old one\n\n[2] (updated 2026-09-01) from the box, report it within 7 days. We send the missing part by express delivery, free of charge, usually within 3 working days. Replacement or refund. Company X collects the item free of charge. We ship a replacement within 5 working days after the item reaches our warehouse. If you prefer, we refund the full price instead, including the\n\n[3] (updated 2026-10-10) item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse.\n\nQuestion: How many days do I have to send back something I don't like?<|im_end|>\n<|im_start|>assistant\n",
+ "rag_raw": "<tool_call>\n{\"name\": \"Answer\", \"arguments\": {\"answer\": \"You have 14 days to send back something you don't like.\", \"sources\": [1], \"enough_info\": true}}\n</tool_call>",
+ "variants": {
+  "ids_json_no_gate": {
+   "text": "5/8 correct | retrieval errors 0 | generation errors 3",
+   "ok": 5,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 3,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04",
+     "answer": "You have 14 days to send back something you don't like.",
+     "source_ids": "POT-RET-01#01 POT-RET-01#04",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "generation",
+     "seconds": 11.8
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "If your new kettle arrived broken, please contact our customer service immediately to report the issue. We will replace it free of charge.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 7.8
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "FAQ-AP-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 7.8
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04",
+     "answer": "No, you do not need to pay for delivery.",
+     "source_ids": "PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 12.0
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "If the driver misses your time slot or the order is more than 3 days late, contact support with your order code. They will book a new delivery time.",
+     "source_ids": "POT-DEL-01#04 POT-DEL-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "generation",
+     "seconds": 10.3
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02",
+     "answer": "Yes, the technician can take your old washing machine away.",
+     "source_ids": "SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 11.1
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "Sorry, but I don't have specific information about showrooms or physical locations.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 9.1
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "Sorry, I don't have that information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 4.7
+    }
+   ]
+  },
+  "numbers_json_no_gate": {
+   "text": "4/8 correct | retrieval errors 0 | generation errors 4",
+   "ok": 4,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 4,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04",
+     "answer": "You have 7 days to send back something you don't like.",
+     "source_ids": "POL-DMG-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 9.7
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the broken kettle immediately as soon as possible.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 6.2
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "FAQ-AP-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 6.9
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04",
+     "answer": "No, you do not need to pay for delivery.",
+     "source_ids": "PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 10.6
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "Contact support with your order code as soon as possible. They will handle the situation according to the policy.",
+     "source_ids": "POL-DEL-01#04",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 8.0
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02",
+     "answer": "Yes, the technician can take away your old washing machine for free during the same visit.",
+     "source_ids": "SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 10.1
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "Sorry, but we don't have a showroom in Da Nang.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 4.8
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "No discounts are currently offered to students.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 4.4
+    }
+   ]
+  },
+  "numbers_json_gate": {
+   "text": "6/8 correct | retrieval errors 0 | generation errors 2",
+   "ok": 6,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 2,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04",
+     "answer": "You have 7 days to send back something you don't like.",
+     "source_ids": "POL-DMG-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 9.7
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the broken kettle immediately as soon as possible.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 6.2
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "FAQ-AP-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 6.9
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04",
+     "answer": "No, you do not need to pay for delivery.",
+     "source_ids": "PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 10.6
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "Contact support with your order code as soon as possible. They will handle the situation according to the policy.",
+     "source_ids": "POL-DEL-01#04",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 8.0
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02",
+     "answer": "Yes, the technician can take away your old washing machine for free during the same visit.",
+     "source_ids": "SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 10.1
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  },
+  "short_prompt_gate": {
+   "text": "7/8 correct | retrieval errors 0 | generation errors 1",
+   "ok": 7,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 1,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04",
+     "answer": "You can return an item within 14 days of delivery if you changed your mind.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 13.9
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the damage immediately as soon as you notice it. We will replace your kettle free of charge.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 10.3
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "FAQ-AP-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 10.6
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04",
+     "answer": "No, you do not need to pay for delivery as your order is under 500,000 VND.",
+     "source_ids": "POL-PAY-01#01 PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.3
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "Contact support with your order code as soon as possible. They will handle the booking of a new delivery slot and ensure the driver arrives on time.",
+     "source_ids": "POL-DEL-01#04 POL-DEL-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 12.3
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02",
+     "answer": "Yes, the technician can take away your old washing machine for free during the same visit.",
+     "source_ids": "POL-DEL-01#03 SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.2
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  },
+  "short_prompt_gate_task": {
+   "text": "6/8 correct | retrieval errors 0 | generation errors 2",
+   "ok": 6,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 2,
+   "rows": [
+    {
+     "qid": "T01",
+     "question": "I opened the box and I don't want it anymore. Can I return it?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-RET-01#03 POL-RET-01#04",
+     "answer": "Yes, you can return the item within 14 days of delivery if you changed your mind.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 14.0
+    },
+    {
+     "qid": "T02",
+     "question": "Who pays the courier when I send an item back?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#02 POL-RET-01#04 POL-RET-01#03",
+     "answer": "",
+     "source_ids": "",
+     "enough_info": null,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": false,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 14.5
+    },
+    {
+     "qid": "T03",
+     "question": "Is HF-2013 the right filter for my purifier?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#02 FAQ-AP-01#03",
+     "answer": "Yes, HF-2013 is the correct filter for your AP-20 purifier.",
+     "source_ids": "FAQ-AP-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 13.8
+    },
+    {
+     "qid": "T04",
+     "question": "I paid twice for the same order. When do I get one payment back?",
+     "correct_source": "POL-PAY-01",
+     "retrieved": "POL-PAY-01#03 POL-DEL-01#04 POL-RET-01#04",
+     "answer": "A double charge is refunded in 3-5 working days, depending on your bank.",
+     "source_ids": "POL-PAY-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 12.9
+    },
+    {
+     "qid": "T06",
+     "question": "How much does it cost to install an air conditioner?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "SVC-INS-01#01 SVC-INS-01#02 FAQ-AP-01#02",
+     "answer": "It costs 500,000 VND for an air conditioner.",
+     "source_ids": "SVC-INS-01#01 SVC-INS-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 15.7
+    },
+    {
+     "qid": "T08",
+     "question": "How loud is the bigger purifier at night?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03 FAQ-AP-01#02",
+     "answer": "The AP-40 makes 28 dB at night.",
+     "source_ids": "FAQ-AP-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 13.4
+    },
+    {
+     "qid": "T09",
+     "question": "Can I collect my order myself at your warehouse?",
+     "correct_source": "none",
+     "retrieved": "POL-ORD-01#01 POL-ORD-01#02 POL-DEL-01#02",
+     "answer": "No, we do not offer collection of orders at our warehouse.",
+     "source_ids": "POL-ORD-01#01 POL-ORD-01#02",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": false,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": false,
+     "error": "generation",
+     "seconds": 14.4
+    },
+    {
+     "qid": "T10",
+     "question": "Do you buy back old phones?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  }
+ },
+ "k": {
+  "1": {
+   "text": "4/8 correct | retrieval errors 2 | generation errors 2",
+   "ok": 4,
+   "n": 8,
+   "retrieval": 2,
+   "generation": 2,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01",
+     "answer": "You can return an item within 14 days of delivery if you changed your mind.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 12.1
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the damage immediately as soon as possible after receiving the product. Follow the steps outlined in the context to ensure proper handling and reporting of any issues.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.4
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.3
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01",
+     "answer": "No, you do not need to pay for delivery as your order amount is less than 10,000,000 VND.",
+     "source_ids": "POL-PAY-01#01",
+     "enough_info": true,
+     "retrieval_ok": false,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "retrieval",
+     "seconds": 13.4
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04",
+     "answer": "Contact support immediately as the driver did not arrive according to the booking details. They can help resolve the issue and arrange a new delivery time.",
+     "source_ids": "POL-DEL-01#04",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 11.7
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03",
+     "answer": "No, the technician cannot take your old washing machine away as we deliver new ones ourselves.",
+     "source_ids": "POL-DEL-01#03",
+     "enough_info": true,
+     "retrieval_ok": false,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "retrieval",
+     "seconds": 11.7
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  },
+  "5": {
+   "text": "6/8 correct | retrieval errors 0 | generation errors 2",
+   "ok": 6,
+   "n": 8,
+   "retrieval": 0,
+   "generation": 2,
+   "rows": [
+    {
+     "qid": "Q01",
+     "question": "How many days do I have to send back something I don't like?",
+     "correct_source": "POL-RET-01",
+     "retrieved": "POL-RET-01#01 POL-DMG-01#03 POL-RET-01#04 POL-PAY-01#03 POL-DMG-01#02",
+     "answer": "If you change your mind, you can return the item within 14 days of delivery.",
+     "source_ids": "POL-RET-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 19.1
+    },
+    {
+     "qid": "Q02",
+     "question": "My new kettle arrived broken. What should I do?",
+     "correct_source": "POL-DMG-01",
+     "retrieved": "POL-DMG-01#01",
+     "answer": "Report the damage immediately as soon as possible after receiving the product. Follow the steps outlined in the context to ensure proper handling and reporting of any issues.",
+     "source_ids": "POL-DMG-01#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": false,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.3
+    },
+    {
+     "qid": "Q04",
+     "question": "How much is HF-4013?",
+     "correct_source": "FAQ-AP-01",
+     "retrieved": "FAQ-AP-01#03",
+     "answer": "HF-4013 costs 450,000 VND.",
+     "source_ids": "",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": false,
+     "fact_ok": true,
+     "ok": false,
+     "error": "generation",
+     "seconds": 12.2
+    },
+    {
+     "qid": "Q05",
+     "question": "My order is 700,000 VND. Do I pay for delivery?",
+     "correct_source": "PRM-DEL-10",
+     "retrieved": "POL-PAY-01#01 PRM-DEL-10#01 POL-DMG-01#04 POL-DEL-01#04 POL-DMG-01#03",
+     "answer": "No, you do not need to pay for delivery as your order is under 500,000 VND.",
+     "source_ids": "POL-PAY-01#01 PRM-DEL-10#01",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 20.5
+    },
+    {
+     "qid": "Q06",
+     "question": "The driver did not come in my time slot. What now?",
+     "correct_source": "POL-DEL-01",
+     "retrieved": "POL-DEL-01#04 POL-DEL-01#03",
+     "answer": "Contact support with your order code as soon as possible. They will handle the situation according to the rules we discussed earlier.",
+     "source_ids": "POL-DEL-01#04 POL-DEL-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 13.7
+    },
+    {
+     "qid": "Q07",
+     "question": "Can the technician take my old washing machine away?",
+     "correct_source": "SVC-INS-01",
+     "retrieved": "POL-DEL-01#03 SVC-INS-01#03 POL-WAR-01#02 SVC-INS-01#02 SVC-INS-01#01",
+     "answer": "Yes, the technician can take your old washing machine away for free during the same visit.",
+     "source_ids": "SVC-INS-01#03",
+     "enough_info": true,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": true,
+     "ok": true,
+     "error": "none",
+     "seconds": 20.2
+    },
+    {
+     "qid": "Q09",
+     "question": "Do you have a showroom in Da Nang where I can see the products?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    },
+    {
+     "qid": "Q10",
+     "question": "Do you give a discount to students?",
+     "correct_source": "none",
+     "retrieved": "",
+     "answer": "I do not have this information.",
+     "source_ids": "",
+     "enough_info": false,
+     "retrieval_ok": true,
+     "enough_ok": true,
+     "cites_ok": true,
+     "fact_ok": null,
+     "ok": true,
+     "error": "none",
+     "seconds": 0.0
+    }
+   ]
+  }
+ },
+ "filter_q05": {
+  "qid": "Q05",
+  "question": "My order is 700,000 VND. Do I pay for delivery?",
+  "correct_source": "PRM-DEL-10",
+  "retrieved": "PRM-DEL-10#01 POL-DEL-01#04 POL-DEL-01#02",
+  "answer": "No, you do not need to pay for delivery as your order is under 500,000 VND.",
+  "source_ids": "PRM-DEL-10#01",
+  "enough_info": true,
+  "retrieval_ok": true,
+  "enough_ok": true,
+  "cites_ok": true,
+  "fact_ok": true,
+  "ok": true,
+  "error": "none"
+ },
+ "manual_q01": {
+  "answer": {
+   "answer": "The change-of-mind returns allow you to return an item within 14 days of delivery if you changed your mind.",
+   "source_ids": [
+    "[POL-RET-01#01]",
+    "[POL-RET-01#04]"
+   ],
+   "enough_info": true
+  },
+  "raw": "```json\n{\n    \"answer\": \"The change-of-mind returns allow you to return an item within 14 days of delivery if you changed your mind.\",\n    \"source_ids\": [\"[POL-RET-01#01]\", \"[POL-RET-01#04]\"],\n    \"enough_info\": true\n}\n```",
+  "docs": [
+   "POL-RET-01#01",
+   "POL-DMG-01#03",
+   "POL-RET-01#04"
+  ],
+  "prompt": "Answer the customer's question using ONLY the context. Each context block starts with its id in [ ].\nReply with only a JSON object: {\"answer\": \"...\", \"source_ids\": [\"...\"], \"enough_info\": true}\nIf the context does not answer the question, set enough_info to false, source_ids to [] and say so.\n\nContext:\n[POL-RET-01#01] (updated 2026-10-10) Change-of-mind returns. You can return an item within 14 days of delivery if you changed your mind. The item must be unused, clean and in its original box with all accessories and the warranty card. Exchanges. If you want another colour or model instead, choose \"exchange\" when you book the return. We ship the new item when the old one\n\n[POL-DMG-01#03] (updated 2026-09-01) from the box, report it within 7 days. We send the missing part by express delivery, free of charge, usually within 3 working days. Replacement or refund. Company X collects the item free of charge. We ship a replacement within 5 working days after the item reaches our warehouse. If you prefer, we refund the full price instead, including the\n\n[POL-RET-01#04] (updated 2026-10-10) item from your address. From 10 October 2026 return shipping is free. The refund goes back to the original payment method within 7 working days after the item reaches our warehouse.\n\nQuestion: How many days do I have to send back something I don't like?"
+ },
+ "seconds_total": 1074
+}

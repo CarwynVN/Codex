@@ -1,0 +1,152 @@
+{
+  "demo": [
+    {
+      "qid": "Q01",
+      "question": "How many days do I have to send back something I don't like?",
+      "source_id": "POL-RET-01",
+      "kind": "paraphrase",
+      "facts": [
+        "14 days"
+      ]
+    },
+    {
+      "qid": "Q02",
+      "question": "My new kettle arrived broken. What should I do?",
+      "source_id": "POL-DMG-01",
+      "kind": "paraphrase",
+      "facts": [
+        "7 days"
+      ]
+    },
+    {
+      "qid": "Q04",
+      "question": "How much is HF-4013?",
+      "source_id": "FAQ-AP-01",
+      "kind": "product code",
+      "facts": [
+        "450,000",
+        "450000"
+      ]
+    },
+    {
+      "qid": "Q05",
+      "question": "My order is 700,000 VND. Do I pay for delivery?",
+      "source_id": "PRM-DEL-10",
+      "kind": "two versions",
+      "facts": [
+        "free",
+        "do not need to pay",
+        "don't need to pay",
+        "do not pay",
+        "no delivery fee"
+      ]
+    },
+    {
+      "qid": "Q06",
+      "question": "The driver did not come in my time slot. What now?",
+      "source_id": "POL-DEL-01",
+      "kind": "late section",
+      "facts": [
+        "new slot",
+        "cancel",
+        "contact support"
+      ]
+    },
+    {
+      "qid": "Q07",
+      "question": "Can the technician take my old washing machine away?",
+      "source_id": "SVC-INS-01",
+      "kind": "late section",
+      "facts": [
+        "free",
+        "away"
+      ]
+    },
+    {
+      "qid": "Q09",
+      "question": "Do you have a showroom in Da Nang where I can see the products?",
+      "source_id": null,
+      "kind": "out of scope",
+      "facts": null
+    },
+    {
+      "qid": "Q10",
+      "question": "Do you give a discount to students?",
+      "source_id": null,
+      "kind": "out of scope",
+      "facts": null
+    }
+  ],
+  "task": [
+    {
+      "qid": "T01",
+      "question": "I opened the box and I don't want it anymore. Can I return it?",
+      "source_id": "POL-RET-01",
+      "kind": "paraphrase",
+      "facts": [
+        "14 days"
+      ]
+    },
+    {
+      "qid": "T02",
+      "question": "Who pays the courier when I send an item back?",
+      "source_id": "POL-RET-01",
+      "kind": "two versions",
+      "facts": [
+        "free"
+      ]
+    },
+    {
+      "qid": "T03",
+      "question": "Is HF-2013 the right filter for my purifier?",
+      "source_id": "FAQ-AP-01",
+      "kind": "product code",
+      "facts": [
+        "AP-20"
+      ]
+    },
+    {
+      "qid": "T04",
+      "question": "I paid twice for the same order. When do I get one payment back?",
+      "source_id": "POL-PAY-01",
+      "kind": "late section",
+      "facts": [
+        "3-5 working days",
+        "3 to 5"
+      ]
+    },
+    {
+      "qid": "T06",
+      "question": "How much does it cost to install an air conditioner?",
+      "source_id": "SVC-INS-01",
+      "kind": "paraphrase",
+      "facts": [
+        "500,000",
+        "500000"
+      ]
+    },
+    {
+      "qid": "T08",
+      "question": "How loud is the bigger purifier at night?",
+      "source_id": "FAQ-AP-01",
+      "kind": "late section",
+      "facts": [
+        "28 dB"
+      ]
+    },
+    {
+      "qid": "T09",
+      "question": "Can I collect my order myself at your warehouse?",
+      "source_id": null,
+      "kind": "out of scope",
+      "facts": null
+    },
+    {
+      "qid": "T10",
+      "question": "Do you buy back old phones?",
+      "source_id": null,
+      "kind": "out of scope",
+      "facts": null
+    }
+  ]
+}

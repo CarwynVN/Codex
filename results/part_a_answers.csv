@@ -1,0 +1,9 @@
+qid,question,correct_source,retrieved,answer,source_ids,enough_info,retrieval_ok,enough_ok,cites_ok,fact_ok,ok,error,seconds
+T01,I opened the box and I don't want it anymore. Can I return it?,POL-RET-01,POL-RET-01#01 POL-RET-01#03 POL-RET-01#04,"Yes, you can return the item within 14 days of delivery if you changed your mind.",POL-RET-01#01,True,True,True,True,True,True,none,120.0
+T02,Who pays the courier when I send an item back?,POL-RET-01,POL-RET-01#02 POL-RET-01#04 POL-RET-01#03,We ship the new item when the old one reaches our warehouse.,POL-RET-01#02 POL-RET-01#04,True,True,True,True,False,False,generation,71.9
+T03,Is HF-2013 the right filter for my purifier?,FAQ-AP-01,FAQ-AP-01#02 FAQ-AP-01#03,"Yes, HF-2013 is the correct filter for your AP-20 purifier.",FAQ-AP-01#02,True,True,True,True,True,True,none,59.0
+T04,I paid twice for the same order. When do I get one payment back?,POL-PAY-01,POL-PAY-01#03 POL-DEL-01#04 POL-RET-01#04,"A double charge is refunded in 3-5 working days, depending on your bank.",POL-PAY-01#03,True,True,True,True,True,True,none,56.7
+T06,How much does it cost to install an air conditioner?,SVC-INS-01,SVC-INS-01#01 SVC-INS-01#02 FAQ-AP-01#02,"It costs 500,000 VND for an air conditioner to be installed.",SVC-INS-01#02,True,True,True,True,True,True,none,67.3
+T08,How loud is the bigger purifier at night?,FAQ-AP-01,FAQ-AP-01#03 FAQ-AP-01#02,The AP-40 makes 28 dB at night.,FAQ-AP-01#02,True,True,True,True,True,True,none,60.9
+T09,Can I collect my order myself at your warehouse?,none,POL-ORD-01#01 POL-ORD-01#02 POL-DEL-01#02,"No, you cannot collect your order yourself at our warehouse. Please wait for the delivery person to deliver the items to your doorstep.",POL-ORD-01#01 POL-ORD-01#02,True,True,False,True,,False,generation,69.4
+T10,Do you buy back old phones?,none,,I do not have this information.,,False,True,True,True,,True,none,0.0
